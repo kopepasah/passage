@@ -1,0 +1,16 @@
+{
+  "name": "passage",
+  "version": "0.1.0",
+  "description": "Vagrant SSH tool.",
+  "scripts": {
+    "door": "node ./scripts/door.js",
+    "code": "node ./scripts/code.js"
+  },
+  "author": "Justin Kopepasah",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "config-file": "^0.3.2",
+    "grunt": "^1.0.1"
+  }
+}

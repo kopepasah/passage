@@ -1,0 +1,20 @@
+#!/bin/bash
+# Wrapper for Passage.
+set -e
+
+# Set the current directory.
+LOCAL=$PWD
+
+# Get the location to Passage, and change to that directory.
+PASSAGE=$(dirname $0)
+if [ -L $0 ]; then
+	PASSAGE=$PASSAGE/$(dirname $(readlink $0))
+fi
+cd $PASSAGE
+
+# Set the Passage variables.
+DOOR=$(npm run door -s -- --directory=${LOCAL} --command="${*}")
+CODE=$(npm run code -s -- --directory=${LOCAL} --command="${*}")
+
+cd $DOOR
+vagrant ssh --command="${CODE}" -- -t -A 2> /dev/null
