@@ -116,7 +116,7 @@ module.exports = {
 				}
 			}
 
-			if ( 'undefined' === site ) {
+			if ( 'undefined' === typeof site ) {
 				console.error(
 					chalk.red( '[Error]:' ),
 					'Target site not defined and not in current directory of a site.'
