@@ -37,7 +37,7 @@ module.exports = {
 
 		/**
 		 * Checks if target is defined or machine exists. If not defined and
-		 * machine does not exist, returns
+		 * machine does not exist, throws and error.
 		 */
 		vagrant : function( target ) {
 			var machine, machines = conf( 'machines.json' );
